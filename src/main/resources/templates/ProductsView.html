@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sporting Equipment</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<style>
+    * {
+        padding: 5px;
+    }
+
+    ul:first-child:first-child {
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    li {
+        font-size: 40px;
+        border: 1px solid black;
+        width: 50%;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+<div class="container">
+    <h4>Спортска Продавница</h4>
+    <div class="container-fluid">
+        <h3 th:text="${message}" id="">Се' уште немате внесено продукти</h3>
+        <ul th:each="product: ${products}">
+            <li th:value="${product.id}" th:text="${product.id} + '. ' + ${product.productName}" valie="${product.id}" onClick='location.href=location.href + "/" + value'>
+            </li>
+            <div style="width: 50%" class="row">
+                <div class="col-md-6">
+                    <form action="#" th:action="@{/products}" th:method="delete">
+                        <input type="hidden" name="_method" value="delete">
+                        <button style="width: 100%; border-radius: 10px;" type="submit" th:value="${product.id}" name="productId" class="btn-danger">Delete</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <form action="#" th:action="@{/products}" th:method="put">
+                        <input type="hidden" name="_method" value="put">
+                        <button style="width: 100%; border-radius: 10px;" type="submit" th:value="${product.id}" name="productId" class="btn-secondary">Edit</button>
+                    </form>
+                </div>
+            </div>
+        </ul>
+        <button class="btn-primary" onClick="location.href=location.href + '/' + 'add'">Add product</button>
+    </div>
+</div>
+</body>
+</html>

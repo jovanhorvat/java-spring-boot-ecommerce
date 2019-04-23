@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sporting Equipment</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<style>
+    div {
+        font-size: 40px;
+    }
+
+    body {
+        background-color: seashell;
+    }
+</style>
+
+<body style="text-align: center">
+<div class="container">
+    <div class="row justify-content-center">
+        <div th:text="'Product ID: ' + ${product.id}"></div>
+    </div>
+    <div class="row justify-content-center">
+        <div th:text="'Product Name: ' + ${product.productName}"></div>
+    </div>
+    <div class="row justify-content-center">
+        <div th:text="'Product Description: ' + ${product.productDescription}"></div>
+    </div>
+    <div class="row">
+        <div class="col col-md-6">
+            <div th:text="'Product Category ID: ' + ${product.productCategory.id}"></div>
+        </div>
+        <div class="col col-md-6">
+            <div th:text="'Product Category Name: ' + ${product.productCategory.name}"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-md-6">
+            <div th:text="'Product Manufacturer ID: ' + ${product.productManufacturer.id}"></div>
+        </div>
+        <div class="col col-md-6">
+            <div th:text="'Product Manufacturer Name: ' + ${product.productManufacturer.name}"></div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <img th:src="${'/image/'+product.id}" class="img-responsive" style="width:100px height: 100px;">
+    </div>
+</div>
+</body>
+</html>
