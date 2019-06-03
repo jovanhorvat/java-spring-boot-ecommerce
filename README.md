@@ -6,4 +6,4 @@
 - CRUD functionalities
 - Image upload/storing
 - Pagination on Product catalog page
-- <a href="https://stripe.com/">Stripe payment integration with dummy credit cards</a>
+- <a href="https://stripe.com/">Stripe</a> payment integration with dummy credit cards
